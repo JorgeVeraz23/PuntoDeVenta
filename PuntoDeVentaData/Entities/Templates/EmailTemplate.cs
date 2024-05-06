@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
+﻿using Data.Entities.Utilities;
+using DocumentFormat.OpenXml.Wordprocessing;
 using PuntoDeVentaData.Entities.Utilities;
 using System;
 using System.Collections.Generic;

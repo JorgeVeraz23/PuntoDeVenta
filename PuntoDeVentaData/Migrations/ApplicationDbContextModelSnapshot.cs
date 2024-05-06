@@ -196,6 +196,5425 @@ namespace Data.Migrations
                     b.ToTable("UsersToken", "SEG");
                 });
 
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Utilities.BucketFile", b =>
+                {
+                    b.Property<long>("IdBucketFile")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdBucketFile"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("Sync")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TempFileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UrlFile")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UrlKey")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdBucketFile");
+
+                    b.ToTable("BucketFiles");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Utilities.Logs", b =>
+                {
+                    b.Property<long>("IdLog")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdLog"));
+
+                    b.Property<string>("Ambiente")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Controller")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Endpoint")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("InnerException")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Plataform")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("RequestID")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("RequestTraceIdentifier")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("StackTrace")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdLog");
+
+                    b.ToTable("Logs");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AccionesRequisitoFicha", b =>
+                {
+                    b.Property<long>("IdAccionRequisitosFicha")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdAccionRequisitosFicha"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("IdAreaReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdRequisitoTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreAccion")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdAccionRequisitosFicha");
+
+                    b.HasIndex("IdAreaReclamo");
+
+                    b.HasIndex("IdRequisitoTipoFicha");
+
+                    b.ToTable("AccionesRequisitoFichas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AggregatedCounter", b =>
+                {
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpireAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<long>("Value")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("AggregatedCounters");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Archivos", b =>
+                {
+                    b.Property<long>("IdArchivo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdArchivo"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("Alto")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("Ancho")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Descarga")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Disponible")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("EnlacePrivado")
+                        .IsRequired()
+                        .HasMaxLength(1500)
+                        .HasColumnType("nvarchar(1500)");
+
+                    b.Property<string>("EnlacePublico")
+                        .IsRequired()
+                        .HasMaxLength(1800)
+                        .HasColumnType("nvarchar(1800)");
+
+                    b.Property<bool>("Escritura")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Extension")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("FechaCarga")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Imagen")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("Lectura")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NombreOriginal")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("NombreSistema")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<bool>("Sistema")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("TamaniMb")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("TamanioKb")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdArchivo");
+
+                    b.ToTable("Archivos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ArchivosCarga", b =>
+                {
+                    b.Property<long>("idArchivosCarga")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("idArchivosCarga"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreOriginal")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombreSistema")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("RutaDescarga")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("idArchivosCarga");
+
+                    b.ToTable("ArchivosCargas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ArchivosCargaIncidencia", b =>
+                {
+                    b.Property<long>("IdArchivoCargaIncidencia")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdArchivoCargaIncidencia"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdArchivosCarga")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ProcesoIncidencia")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdArchivoCargaIncidencia");
+
+                    b.HasIndex("IdArchivosCarga");
+
+                    b.HasIndex("IdIncidencias");
+
+                    b.ToTable("ArchivosCargaIncidencia");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasReclamos", b =>
+                {
+                    b.Property<long>("IdAreaReclamos")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdAreaReclamos"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("AreaReclamo")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("CasualSap")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Codrcsap")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Plazo1")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Plazo2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ResponsableNivel1")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ResponsableNivel2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoReconocimiento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdAreaReclamos");
+
+                    b.ToTable("AreasReclamos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasResponsables", b =>
+                {
+                    b.Property<long>("IdAreasResponsables")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdAreasResponsables"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("IdAreaReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdResponsableReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdAreasResponsables");
+
+                    b.HasIndex("IdAreaReclamo");
+
+                    b.HasIndex("IdResponsableReclamo");
+
+                    b.ToTable("AreasResponsables");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorComercial", b =>
+                {
+                    b.Property<long>("IdAsesorComercial")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdAsesorComercial"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdTerritorio")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Mail")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdAsesorComercial");
+
+                    b.HasIndex("IdTerritorio");
+
+                    b.ToTable("AsesorComercials");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorTecnico", b =>
+                {
+                    b.Property<long>("IdAsesorTecnico")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdAsesorTecnico"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdTerritorio")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Mail")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdAsesorTecnico");
+
+                    b.HasIndex("IdTerritorio");
+
+                    b.ToTable("AsesorTecnicos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CargaCorreo", b =>
+                {
+                    b.Property<string>("NombreResponsable")
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Correo")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("NombreResponsable");
+
+                    b.ToTable("CargaCorreos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CargaMatriz", b =>
+                {
+                    b.Property<long>("IdCargaMatriz")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCargaMatriz"));
+
+                    b.Property<string>("AccionInmediada")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("AreaResponsable")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Caso")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("CausalSap")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Clasificacion")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<double?>("CodRcSap")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdAccion")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdAreaResponsable")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdCaso")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdRequisito")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdResponsable1")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdResponsable2")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdSubMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTipoReconocimiento")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Motivo")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<decimal?>("Plazo1")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal?>("Plazo2")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("RequisitosBasicos")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("ResponsableNivel1Ecuador")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("ResponsableNivel1Perú")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("ResponsableNivel2")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("SubCodigo")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("SubMotivo")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("TipoDeReconocimiento")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdCargaMatriz");
+
+                    b.ToTable("CargaMatrizs");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Casos", b =>
+                {
+                    b.Property<long>("IdCasos")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCasos"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Caso")
+                        .HasMaxLength(300)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Motivo")
+                        .HasMaxLength(300)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<string>("SubMotivo")
+                        .HasMaxLength(300)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<long?>("TipoFicha")
+                        .HasMaxLength(300)
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdCasos");
+
+                    b.ToTable("Casos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CategoriaCamaron", b =>
+                {
+                    b.Property<long>("IdCategoriaCamaron")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCategoriaCamaron"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreCategoriaCamaron")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdCategoriaCamaron");
+
+                    b.ToTable("CategoriaCamarons");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CategoriaSeleccionada", b =>
+                {
+                    b.Property<long>("IdCategoriaSeleccionada")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCategoriaSeleccionada"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdCategoriaCamaron")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdIncidencia")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdCategoriaSeleccionada");
+
+                    b.HasIndex("IdCategoriaCamaron");
+
+                    b.HasIndex("IdIncidencia");
+
+                    b.ToTable("CategoriaSeleccionadas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Categorias", b =>
+                {
+                    b.Property<long>("IdCategoria")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCategoria"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdCategoria");
+
+                    b.ToTable("Categorias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Ciudades", b =>
+                {
+                    b.Property<long>("IdCiudad")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCiudad"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("CodigoPostal")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdEstado")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("Latitud")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("Longitud")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdCiudad");
+
+                    b.HasIndex("IdEstado");
+
+                    b.ToTable("Ciudades");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ClaimsUsuario", b =>
+                {
+                    b.Property<long>("IdClaim")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdClaim"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IdUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdClaim");
+
+                    b.HasIndex("IdUsuario");
+
+                    b.ToTable("ClaimsUsuarios");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Cliente", b =>
+                {
+                    b.Property<long>("IdCliente")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCliente"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Identificacion")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdCliente");
+
+                    b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Continente", b =>
+                {
+                    b.Property<long>("IdContinente")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdContinente"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Codigo")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdContinente");
+
+                    b.ToTable("Continentes");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CorreoNotification", b =>
+                {
+                    b.Property<long>("IdCorreoNotification")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdCorreoNotification"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdIncidencia")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreCorreoNotification")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("isEvaluacion")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("isExterno")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("isResponsable")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("isSac")
+                        .HasColumnType("bit");
+
+                    b.HasKey("IdCorreoNotification");
+
+                    b.ToTable("CorreoNotifications");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Counter", b =>
+                {
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpiraAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("Counters");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Encuesta", b =>
+                {
+                    b.Property<long>("IdEncuesta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdEncuesta"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdEncuesta");
+
+                    b.ToTable("Encuestas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaDetalle", b =>
+                {
+                    b.Property<long>("IdEncuestaDetalle")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdEncuestaDetalle"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdEncuesta")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdEncuestaDetalle");
+
+                    b.HasIndex("IdEncuesta");
+
+                    b.ToTable("EncuestaDetalles");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaIncidencia", b =>
+                {
+                    b.Property<long>("IdEncuesta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdEncuesta"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdIncidencia")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdEncuesta");
+
+                    b.HasIndex("IdIncidencia");
+
+                    b.ToTable("EncuestaIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EstadoProcesoFicha", b =>
+                {
+                    b.Property<long>("IdEstadoProcesoFicha")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdEstadoProcesoFicha"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdEstadoProcesoFicha");
+
+                    b.ToTable("EstadoProcesoFichas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Estados", b =>
+                {
+                    b.Property<long>("IdEstado")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdEstado"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdPais")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdRegion")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdEstado");
+
+                    b.HasIndex("IdPais");
+
+                    b.HasIndex("IdRegion");
+
+                    b.ToTable("Estados");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EstadosIncidencias", b =>
+                {
+                    b.Property<long>("IdEstadoIncidencias")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdEstadoIncidencias"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreEstado")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdEstadoIncidencias");
+
+                    b.ToTable("EstadosIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Factura", b =>
+                {
+                    b.Property<long>("IdFactura")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdFactura"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdCliente")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdPuntoVenta")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("Iva")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdFactura");
+
+                    b.HasIndex("IdCliente");
+
+                    b.HasIndex("IdPuntoVenta");
+
+                    b.ToTable("Facturas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.FacturaDetalle", b =>
+                {
+                    b.Property<long>("IdFacturaDetalle")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdFacturaDetalle"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("IVA")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<long>("IdFactura")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdProducto")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdFacturaDetalle");
+
+                    b.HasIndex("IdFactura");
+
+                    b.HasIndex("IdProducto");
+
+                    b.ToTable("FacturaDetalles");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GestorReclamo", b =>
+                {
+                    b.Property<long>("IdGestorReclamo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdGestorReclamo"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdTerritorio")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Mail")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdGestorReclamo");
+
+                    b.HasIndex("IdTerritorio");
+
+                    b.ToTable("GestorReclamos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GrupoDePreguntas", b =>
+                {
+                    b.Property<long>("IdGrupoPreguntas")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdGrupoPreguntas"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("EncuestaDetalleIdEncuestaDetalle")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreGrupoDePreguntas")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdGrupoPreguntas");
+
+                    b.HasIndex("EncuestaDetalleIdEncuestaDetalle");
+
+                    b.ToTable("GrupoDePreguntas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Hoja2", b =>
+                {
+                    b.Property<string>("SubMotivo")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Req")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("SubMotivo");
+
+                    b.ToTable("Hoja2s");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Idiomas", b =>
+                {
+                    b.Property<long>("IdIdiomas")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdIdiomas"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("AspCulture")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Codigo")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("CodigoISO")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Defecto")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Disponible")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("WebLang")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.HasKey("IdIdiomas");
+
+                    b.ToTable("Idiomas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Incidencias", b =>
+                {
+                    b.Property<long>("IdIncidencias")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdIncidencias"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("AnalisisConcluido")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Aprobacion")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("CambioProducto")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("CantidadCambioProducto")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CantidadCompensacion")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CantidadDevolucionProducto")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("CierreEfectivo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Codigo")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("CodigoFicha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CodigoSAP")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("ComentarioProcede")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("ComentarioVistaEvComercial")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ComnetarioEvComercial")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<bool>("Compensacion")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal?>("CostoAsociado")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("DecisorNivel1")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("DecisorNivel2")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("DevolucionProducto")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal?>("DiasCierreAnalisis")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal?>("DiasCierreEfectivo")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<long?>("EstadosIncidenciasIdEstadoIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("EvComercial")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("EvNivel1")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("EvNivel2")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("FechaAnalisisConcluido")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaCierreEfectivo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaEnvioCorreoEvComercial")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaEvComercial")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaEvComercialAccion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaEvNivel1")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaEvNivel2")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaFicha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaMaximaCierreAnalisis")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaProcedeIncidencia")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaReporteIncidencia")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FinalObservacion")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<bool>("Generada")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("IdAreaReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdAsesorComercial")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdAsesorTecnico")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdCaso")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdCorreoNotificacion")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdEstadoIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdEstadoProcesoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdGestorReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdResponsableNivel1")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdResponsableNivel2")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdSolicitante")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdSubmotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdTerritorio")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdTipoIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal?>("MontoCambioProducto")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal?>("MontoCompensacion")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal?>("MontoDevolucionProducto")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<bool>("NoProcedeAnalisisConcluido")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("NoProcedeEvComercial")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NombreEvComercial")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombrePersonaProcede")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<bool>("NotificacionNivel2Enviada")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NumeroFactura")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("ObservacionesCostoAsociado")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("OtroComentario")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<bool>("Otros")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("OtrosMotivosProductos")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("PersonaEvComercial")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<decimal?>("PlazoNivel1")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal?>("PlazoNivel2")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal?>("PlazoTotal")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<bool>("ProcedeAnalisisConcluido")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("ProcedeEvComercial")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ReceptorIncidencia")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("ReferenciaPedidoDevolucion")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Resolucion")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("SubCodigo")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<long?>("TipoFichaIdTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdIncidencias");
+
+                    b.HasIndex("EstadosIncidenciasIdEstadoIncidencias");
+
+                    b.HasIndex("IdAreaReclamo");
+
+                    b.HasIndex("IdAsesorComercial");
+
+                    b.HasIndex("IdAsesorTecnico");
+
+                    b.HasIndex("IdCaso");
+
+                    b.HasIndex("IdCorreoNotificacion");
+
+                    b.HasIndex("IdEstadoProcesoFicha");
+
+                    b.HasIndex("IdGestorReclamo");
+
+                    b.HasIndex("IdMotivo");
+
+                    b.HasIndex("IdResponsableNivel1");
+
+                    b.HasIndex("IdResponsableNivel2");
+
+                    b.HasIndex("IdSolicitante");
+
+                    b.HasIndex("IdSubmotivo");
+
+                    b.HasIndex("IdTerritorio");
+
+                    b.HasIndex("IdTipoIncidencias");
+
+                    b.HasIndex("TipoFichaIdTipoFicha");
+
+                    b.ToTable("Incidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Job", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Arguments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpireAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("InvocationData")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("StateId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("StateName")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Jobs");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.LogAccionesIncidencia", b =>
+                {
+                    b.Property<long>("IdLogAccionesInciencia")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdLogAccionesInciencia"));
+
+                    b.Property<string>("Acciones")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CorreoDerivado")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("CorreoEnviado")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("CorreoEnvioLog")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DescripcionAccion")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<DateTime>("FechaEnvioCorreo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdArchivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdIncidencia")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Observacion")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdLogAccionesInciencia");
+
+                    b.HasIndex("IdArchivo");
+
+                    b.HasIndex("IdIncidencia");
+
+                    b.ToTable("LogAccionesIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Matriz", b =>
+                {
+                    b.Property<long>("IdMatriz")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdMatriz"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CODRCSAP")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("CausalSAP")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("CodigoMotivo")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("CodigoSubMotivo")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdAccionesRequisitoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdAreaReclamos")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdCasos")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdMotivos")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdRequisitoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdResponsableReclamo1")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdResponsableReclamo2")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdSubMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTipoReconocimiento")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Plazo1")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Plazo2")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdMatriz");
+
+                    b.HasIndex("IdAccionesRequisitoFicha");
+
+                    b.HasIndex("IdAreaReclamos");
+
+                    b.HasIndex("IdCasos");
+
+                    b.HasIndex("IdMotivos");
+
+                    b.HasIndex("IdRequisitoFicha");
+
+                    b.HasIndex("IdResponsableReclamo1");
+
+                    b.HasIndex("IdResponsableReclamo2");
+
+                    b.HasIndex("IdSubMotivo");
+
+                    b.HasIndex("IdTipoFicha");
+
+                    b.HasIndex("IdTipoReconocimiento");
+
+                    b.ToTable("Matrizs");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Motivo", b =>
+                {
+                    b.Property<long>("IdMotivo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdMotivo"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CodigoMotivo")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("IdCaso")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdMotivo");
+
+                    b.HasIndex("IdCaso");
+
+                    b.ToTable("Motivos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Paises", b =>
+                {
+                    b.Property<long>("IdPais")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdPais"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Alpha3")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Aplha2")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("Codigo")
+                        .HasMaxLength(300)
+                        .HasColumnType("int");
+
+                    b.Property<string>("CodigoTelefonico")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Defecto")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("DenominacionEstado")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<bool>("Disponible")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("IdContinente")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdIdioma")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreCS")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombreDE")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombreEN")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombreES")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombreFR")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombreIT")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombreNl")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdPais");
+
+                    b.HasIndex("IdContinente");
+
+                    b.HasIndex("IdIdioma");
+
+                    b.ToTable("Paises");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Permiso", b =>
+                {
+                    b.Property<long>("IdPermiso")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdPermiso"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Guid")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<long>("IdArea")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdPermiso");
+
+                    b.HasIndex("IdArea");
+
+                    b.ToTable("Permiso");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.PermisosRuta", b =>
+                {
+                    b.Property<int>("IdApplicationRoutePermission")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdApplicationRoutePermission"));
+
+                    b.Property<long>("IdApplicationRoute")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("IdApplicationRoutePermission");
+
+                    b.HasIndex("IdApplicationRoute");
+
+                    b.ToTable("PermisosRutas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.PreguntaCatalogo", b =>
+                {
+                    b.Property<long>("IdPreguntaCatalogo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdPreguntaCatalogo"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Pregunta")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdPreguntaCatalogo");
+
+                    b.ToTable("PreguntaCatalogos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Preguntas", b =>
+                {
+                    b.Property<long>("IdPreguntas")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdPreguntas"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("IdGrupoDePreguntas")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Pregunta")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdPreguntas");
+
+                    b.HasIndex("IdGrupoDePreguntas");
+
+                    b.ToTable("Preguntas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Producto", b =>
+                {
+                    b.Property<long>("IdProductos")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdProductos"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreProducto")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Sku")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdProductos");
+
+                    b.ToTable("Productos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Productos", b =>
+                {
+                    b.Property<long>("IdProducto")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdProducto"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdCategoria")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdProducto");
+
+                    b.HasIndex("IdCategoria");
+
+                    b.ToTable("Productoss");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ProductosIncidencias", b =>
+                {
+                    b.Property<long>("IdProductosIncidencias")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdProductosIncidencias"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("CantidadComprada")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal?>("CantidadReclamo")
+                        .IsRequired()
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DetalleProblema")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("FechaEntrega")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdProducto")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Lote")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("NoFactura")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("NoGuiaRemision")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Observacion")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdProductosIncidencias");
+
+                    b.HasIndex("IdIncidencias");
+
+                    b.HasIndex("IdProducto");
+
+                    b.ToTable("ProductosIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.PuntoVenta", b =>
+                {
+                    b.Property<long>("IdPuntoVenta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdPuntoVenta"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdPuntoVenta");
+
+                    b.ToTable("PuntoVentas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Regiones", b =>
+                {
+                    b.Property<long>("IdRegiones")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdRegiones"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdPais")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdRegiones");
+
+                    b.HasIndex("IdPais");
+
+                    b.ToTable("Regiones");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.RequisitosTipoFicha", b =>
+                {
+                    b.Property<long>("IdRequisitoTipoFicha")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdRequisitoTipoFicha"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Requisito")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdRequisitoTipoFicha");
+
+                    b.HasIndex("IdTipoFicha");
+
+                    b.ToTable("RequisitosTipoFichas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", b =>
+                {
+                    b.Property<long>("IdResponsableReclamos")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdResponsableReclamos"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Correo")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("IdAreaReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTerritorio")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("NivelReclamo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NombreResposable")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdResponsableReclamos");
+
+                    b.HasIndex("IdAreaReclamo");
+
+                    b.HasIndex("IdTerritorio");
+
+                    b.ToTable("ResponsableReclamos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.RespuestaEncuestaIncidencia", b =>
+                {
+                    b.Property<long>("IdRespuestaEncuestaIncidencia")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdRespuestaEncuestaIncidencia"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdEncuesta")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdPregunta")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Respuesta")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdRespuestaEncuestaIncidencia");
+
+                    b.HasIndex("IdEncuesta");
+
+                    b.HasIndex("IdPregunta");
+
+                    b.ToTable("RespuestaEncuestaIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Respuestas", b =>
+                {
+                    b.Property<long>("IdRespuesta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdRespuesta"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("EncuestaIncidenciaIdEncuesta")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdEncuesta")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdPregunta")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("RespuestaPregunta")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdRespuesta");
+
+                    b.HasIndex("EncuestaIncidenciaIdEncuesta");
+
+                    b.HasIndex("IdEncuesta");
+
+                    b.HasIndex("IdPregunta");
+
+                    b.ToTable("Respuestas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Rutas", b =>
+                {
+                    b.Property<long>("IdApplicationRoute")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdApplicationRoute"));
+
+                    b.Property<string>("Accion")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Area")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Controlador")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("MetodosPermitidos")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Modulo")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("NombrePublico")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdApplicationRoute");
+
+                    b.ToTable("Rutass");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SeguridadArea", b =>
+                {
+                    b.Property<long>("IdArea")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdArea"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Guid")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<int?>("SecurityLevelIdNivel")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("SeguridadNiveleIdNivel")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdArea");
+
+                    b.HasIndex("SeguridadNiveleIdNivel");
+
+                    b.ToTable("SeguridadAreas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SeguridadNivele", b =>
+                {
+                    b.Property<long>("IdNivel")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdNivel"));
+
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Guid")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.HasKey("IdNivel");
+
+                    b.ToTable("SeguridadNiveles");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Server", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Data")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<DateTime>("LastHeartbeat")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Servers");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Set", b =>
+                {
+                    b.Property<string>("Key")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("ExpireAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Score")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("Sets");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Solicitante", b =>
+                {
+                    b.Property<long>("idSolicitante")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("idSolicitante"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("COD_GRUPO_CLIENTE_PRE")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Celular")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ClienteFinal")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("CodigoDestinatario")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("CodigoNodo")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("CodigoSolicitante")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("ContactoNombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Correo")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(350)
+                        .HasColumnType("nvarchar(350)");
+
+                    b.Property<string>("GRUPO_CLIENTE_PRE")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nodo")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("NombreContacto")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("SolicitateSap")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("Telefono")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("idSolicitante");
+
+                    b.ToTable("Solicitantes");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.State", b =>
+                {
+                    b.Property<long>("IdState")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdState"));
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Data")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("JoId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdState");
+
+                    b.HasIndex("JoId");
+
+                    b.ToTable("States");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SubMotivo", b =>
+                {
+                    b.Property<long>("IdSubMotivo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdSubMotivo"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CodigoSubMotivo")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdMotivoss")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdRequisitoTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTipoReconocimiento")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreSubMotivo")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("PlazoNivel1")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("PlazoNivel2")
+                        .IsRequired()
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdSubMotivo");
+
+                    b.HasIndex("IdMotivoss");
+
+                    b.HasIndex("IdRequisitoTipoFicha");
+
+                    b.HasIndex("IdTipoReconocimiento");
+
+                    b.ToTable("SubMotivos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TablaMatriz", b =>
+                {
+                    b.Property<long>("IdTablaMatriz")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdTablaMatriz"));
+
+                    b.Property<string>("AccionInmediata")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("AreaReclamo")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("CODRSAP")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Caso")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("CasualSAP")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdAccionInmediada")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdAreaReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdCaso")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdRequisitoBasico")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdResponsableNivel1")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdResponsableNivel2")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdSubMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTipoReconocimiento")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Motivo")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Plazo1")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Plazo2")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("RequisitosBasico")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ResponsableNivel1")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ResponsableNivel1Ecuador")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ResponsableNivel2")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("SubMotivo")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("TipoFicha")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("TipoReconocimiento")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdTablaMatriz");
+
+                    b.ToTable("TablaMatrizs");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TemporalIncidencias", b =>
+                {
+                    b.Property<long>("IdIncidencias")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdIncidencias"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("AnalisisConcluido")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CambioProducto")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("CantidadCambioProducto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CantidadCompensacion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CantidadDevolucionProducto")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("CierreEfectivo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Codigo")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("CodigoFicha")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("CodigoSAP")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("ComentarioEvComercial")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ComentarioProcede")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<bool>("Compensacion")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("CostoAsociado")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("DecisoNivel1")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("DecisorNivel2")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("DevolucionProducto")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("DiasCierreEfectivo")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<bool>("EvComercial")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("EvNivel1")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("EvNivel2")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("FechaAnalisisConcluido")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaCierreEfectivo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaEnvioCorreoEvComercial")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaEvComercial")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaEvComercialAccion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaEvNivel1")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaEvNivel2")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaFicha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaMaximaCierreAnalisis")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaReporteIncidencias")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FehaProcedeIncidencia")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FinalObservacion")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<bool>("Generada")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("IdAreaReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdAsesorComercial")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdAsesorTecnico")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdCaso")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdEstadoIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdEstadoProcesoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdGestorReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdResponsableNivel1")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdResponsableNivel2")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdSolicitante")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdSubMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdTerritorio")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTipoIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("MontoCambioProducto")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("MontoCompensacion")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("MontoDevolucionProducto")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<bool>("NoProcedeAnalisisConcluido")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("NoProcedeEvComercial")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NombreEvComercial")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("NombrePersonaProcede")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<bool>("NotificacionNivel2Enviado")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ObservacionesCostoAsociado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtroComentario")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("PersonaEvComercial")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<decimal>("PlazoNivel1")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("PlazoNivel2")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("PlazoTotal")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<bool>("ProcedeAnalisisConcluido")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("ProcedeEvComercial")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ReceptorIncidencia")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Resolucion")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("SubCodigo")
+                        .HasMaxLength(1200)
+                        .HasColumnType("nvarchar(1200)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdIncidencias");
+
+                    b.HasIndex("IdAreaReclamo");
+
+                    b.HasIndex("IdAsesorComercial");
+
+                    b.HasIndex("IdAsesorTecnico");
+
+                    b.HasIndex("IdCaso");
+
+                    b.HasIndex("IdEstadoIncidencias");
+
+                    b.HasIndex("IdEstadoProcesoFicha");
+
+                    b.HasIndex("IdGestorReclamo");
+
+                    b.HasIndex("IdMotivo");
+
+                    b.HasIndex("IdResponsableNivel1");
+
+                    b.HasIndex("IdResponsableNivel2");
+
+                    b.HasIndex("IdSolicitante");
+
+                    b.HasIndex("IdSubMotivo");
+
+                    b.HasIndex("IdTerritorio");
+
+                    b.HasIndex("IdTipoFicha");
+
+                    b.HasIndex("IdTipoIncidencias");
+
+                    b.ToTable("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TemporalMatrizCausales", b =>
+                {
+                    b.Property<long>("IdTemporalMatrizCausales")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdTemporalMatrizCausales"));
+
+                    b.Property<string>("AccionInmediata")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("AreaResponsable")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Caso")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("CasualSAP")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Clasificacion")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("CodRCSAP")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Motivo")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Plazo1")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Plazo2")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("RequisitosBasicos")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("ResponsableNivel1Ecuador")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ResponsableNivel1Peru")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ResponsableNivel2Ecuador")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ResponsableNivel2Peru")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("SubCodigo")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("SubCodigoSubMot")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("SubMotivo")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("TipoReconocimientp")
+                        .IsRequired()
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdTemporalMatrizCausales");
+
+                    b.ToTable("TemporalMatrizCausales");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Territorio", b =>
+                {
+                    b.Property<long>("IdTerritorio")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdTerritorio"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CodigoTerritorio")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdTerritorio");
+
+                    b.ToTable("Territorios");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoFicha", b =>
+                {
+                    b.Property<long>("IdTipoFicha")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdTipoFicha"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("IdCaso")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdTipoFicha");
+
+                    b.HasIndex("IdCaso");
+
+                    b.ToTable("TipoFichas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoIncidencia", b =>
+                {
+                    b.Property<long>("IdTipoIncidencia")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdTipoIncidencia"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdTipoIncidencia");
+
+                    b.ToTable("TipoIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoReconocimiento", b =>
+                {
+                    b.Property<long>("IdTipoReconocimiento")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdTipoReconocimiento"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IdSubMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreTipoReconocimiento")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdTipoReconocimiento");
+
+                    b.ToTable("TipoReconocimientos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ValidacionPreguntas", b =>
+                {
+                    b.Property<long>("IdValidacionPreguntas")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdValidacionPreguntas"));
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DateDelete")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("IpRegister")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int?>("MaxDecimals")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MaxStringLenght")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MinDecimals")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NombreValidacionPreguntas")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("UserDelete")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserModification")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserRegister")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("IdValidacionPreguntas");
+
+                    b.ToTable("ValidacionPreguntas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ViewDashboardResumenIncidencia", b =>
+                {
+                    b.Property<int?>("Aprobacion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AreaEvaluado")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Clasificacion")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("ClienteFinal")
+                        .HasMaxLength(350)
+                        .HasColumnType("nvarchar(350)");
+
+                    b.Property<string>("ClienteSolicitante")
+                        .HasMaxLength(350)
+                        .HasColumnType("nvarchar(350)");
+
+                    b.Property<string>("CodReclamo")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("CodSap")
+                        .HasMaxLength(350)
+                        .HasColumnType("nvarchar(350)");
+
+                    b.Property<string>("CodigoMotivo")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("CostoAsociadosTransporteDesinfeccionOtros")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("DecisoReclamo")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int?>("Dias")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DiasAnalisis")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaCierreAnalisis")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaCierreEfectivo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaMaximaCierreMatriz")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaReclamo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("GestorReclamos")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<long>("IdAreaReclamos")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdAsesorComercial")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdEstadoProcesoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdGestorReclamo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdMatriz")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdResponsableReclamos")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdSolicitante")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdSubMotivo")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTerritorio")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdTipoFicha")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdTipoIncidencias")
+                        .HasColumnType("bigint");
+
+                    b.Property<int?>("Mes")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Motivo")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("NumeroFactura")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<double?>("PromedioSatisfaccion")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ReferenciaPedidoDevolucion")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Region")
+                        .HasMaxLength(350)
+                        .HasColumnType("nvarchar(350)");
+
+                    b.Property<string>("Resolucion")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("SubCodigo")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("SubMotivo")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.Property<string>("Territorio")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("TipoSolicitud")
+                        .HasMaxLength(900)
+                        .HasColumnType("nvarchar(900)");
+
+                    b.ToTable("ViewDashboardResumenIncidencias");
+                });
+
             modelBuilder.Entity("PuntoDeVentaData.Entities.Parameters.ParameterType", b =>
                 {
                     b.Property<long>("IdTypeParameter")
@@ -537,6 +5956,9 @@ namespace Data.Migrations
                     b.Property<bool>("Bloqueo")
                         .HasColumnType("bit");
 
+                    b.Property<long?>("CiudadesIdCiudad")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -631,6 +6053,8 @@ namespace Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CiudadesIdCiudad");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -1274,138 +6698,6 @@ namespace Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PuntoDeVentaData.Entities.Utilities.BucketFile", b =>
-                {
-                    b.Property<long>("IdBucketFile")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdBucketFile"));
-
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("ContentType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DateDelete")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DateModification")
-                        .HasMaxLength(100)
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DateRegister")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IpDelete")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("IpModification")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("IpRegister")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("Sync")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("TempFileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UrlFile")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UrlKey")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserDelete")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("UserModification")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("UserRegister")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("IdBucketFile");
-
-                    b.ToTable("BucketFiles");
-                });
-
-            modelBuilder.Entity("PuntoDeVentaData.Entities.Utilities.Logs", b =>
-                {
-                    b.Property<long>("IdLog")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdLog"));
-
-                    b.Property<string>("Ambiente")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Controller")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Endpoint")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InnerException")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Plataform")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("RequestId")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("RequestTraceIdentifier")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("StackStrace")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("IdLog");
-
-                    b.ToTable("Logs");
-                });
-
             modelBuilder.Entity("PuntoDeVentaData.Entities.Utilities.Notificacion", b =>
                 {
                     b.Property<long>("IdNotification")
@@ -1536,6 +6828,745 @@ namespace Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AccionesRequisitoFicha", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasReclamos", "AreasReclamos")
+                        .WithMany()
+                        .HasForeignKey("IdAreaReclamo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.RequisitosTipoFicha", "RequisitosTipoFicha")
+                        .WithMany("AccionesRequisitoFicha")
+                        .HasForeignKey("IdRequisitoTipoFicha");
+
+                    b.Navigation("AreasReclamos");
+
+                    b.Navigation("RequisitosTipoFicha");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ArchivosCargaIncidencia", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ArchivosCarga", "ArchivosCarga")
+                        .WithMany("ArchivosCargaIncidencias")
+                        .HasForeignKey("IdArchivosCarga")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Incidencias", "Incidencias")
+                        .WithMany("archivosCargaIncidencias")
+                        .HasForeignKey("IdIncidencias")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ArchivosCarga");
+
+                    b.Navigation("Incidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasResponsables", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasReclamos", "AreasReclamos")
+                        .WithMany()
+                        .HasForeignKey("IdAreaReclamo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", "ResponsableReclamo")
+                        .WithMany("AreasResponsables")
+                        .HasForeignKey("IdResponsableReclamo");
+
+                    b.Navigation("AreasReclamos");
+
+                    b.Navigation("ResponsableReclamo");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorComercial", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Territorio", "Territorio")
+                        .WithMany("AsesorComercial")
+                        .HasForeignKey("IdTerritorio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Territorio");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorTecnico", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Territorio", "Territorio")
+                        .WithMany("AsesorTecnicos")
+                        .HasForeignKey("IdTerritorio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Territorio");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CategoriaSeleccionada", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CategoriaCamaron", "CategoriaCamaron")
+                        .WithMany("CategoriaSeleccionadas")
+                        .HasForeignKey("IdCategoriaCamaron")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Incidencias", "Incidencias")
+                        .WithMany("categoriaSeleccionadas")
+                        .HasForeignKey("IdIncidencia")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CategoriaCamaron");
+
+                    b.Navigation("Incidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Ciudades", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Estados", "Estados")
+                        .WithMany("Ciudades")
+                        .HasForeignKey("IdEstado")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Estados");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ClaimsUsuario", b =>
+                {
+                    b.HasOne("PuntoDeVentaData.Entities.Security.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaDetalle", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Encuesta", "Encuesta")
+                        .WithMany("EncuestaDetalles")
+                        .HasForeignKey("IdEncuesta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Encuesta");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaIncidencia", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Incidencias", "Incidencias")
+                        .WithMany("encuestaIncidencias")
+                        .HasForeignKey("IdIncidencia")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Incidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Estados", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Paises", "Paises")
+                        .WithMany("Estados")
+                        .HasForeignKey("IdPais")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Regiones", "Regiones")
+                        .WithMany("Estados")
+                        .HasForeignKey("IdRegion");
+
+                    b.Navigation("Paises");
+
+                    b.Navigation("Regiones");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Factura", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Cliente", "Cliente")
+                        .WithMany("Factura")
+                        .HasForeignKey("IdCliente")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.PuntoVenta", "PuntoVenta")
+                        .WithMany("Factura")
+                        .HasForeignKey("IdPuntoVenta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+
+                    b.Navigation("PuntoVenta");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.FacturaDetalle", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Factura", "Factura")
+                        .WithMany("FacturaDetalle")
+                        .HasForeignKey("IdFactura")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Productos", "Productos")
+                        .WithMany("FacturaDetalles")
+                        .HasForeignKey("IdProducto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Factura");
+
+                    b.Navigation("Productos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GestorReclamo", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Territorio", "Territorio")
+                        .WithMany("GestorReclamos")
+                        .HasForeignKey("IdTerritorio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Territorio");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GrupoDePreguntas", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaDetalle", "EncuestaDetalle")
+                        .WithMany("GrupoDePreguntas")
+                        .HasForeignKey("EncuestaDetalleIdEncuestaDetalle")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EncuestaDetalle");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Incidencias", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EstadosIncidencias", "EstadosIncidencias")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("EstadosIncidenciasIdEstadoIncidencias");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasReclamos", "AreaReclamos")
+                        .WithMany()
+                        .HasForeignKey("IdAreaReclamo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorComercial", "AsesorComercial")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdAsesorComercial");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorTecnico", "AsesorTecnico")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdAsesorTecnico");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Casos", "Casos")
+                        .WithMany()
+                        .HasForeignKey("IdCaso");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CorreoNotification", "CorreoNotification")
+                        .WithMany()
+                        .HasForeignKey("IdCorreoNotificacion");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EstadoProcesoFicha", "EstadoProcesoFicha")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdEstadoProcesoFicha");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GestorReclamo", "GestorReclamo")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdGestorReclamo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Motivo", "Motivo")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdMotivo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", "ResponsableNivel1")
+                        .WithMany("IncidenciaIdResponsableNivel1")
+                        .HasForeignKey("IdResponsableNivel1");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", "ResponsableNivel2")
+                        .WithMany("IncidenciaIdResponsableNivel2")
+                        .HasForeignKey("IdResponsableNivel2");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Solicitante", "Solicitante")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdSolicitante");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SubMotivo", "SubMotivo")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdSubmotivo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Territorio", "Territorio")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdTerritorio");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoIncidencia", "TipoIncidencia")
+                        .WithMany("Incidencias")
+                        .HasForeignKey("IdTipoIncidencias");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoFicha", "TipoFicha")
+                        .WithMany()
+                        .HasForeignKey("TipoFichaIdTipoFicha");
+
+                    b.Navigation("AreaReclamos");
+
+                    b.Navigation("AsesorComercial");
+
+                    b.Navigation("AsesorTecnico");
+
+                    b.Navigation("Casos");
+
+                    b.Navigation("CorreoNotification");
+
+                    b.Navigation("EstadoProcesoFicha");
+
+                    b.Navigation("EstadosIncidencias");
+
+                    b.Navigation("GestorReclamo");
+
+                    b.Navigation("Motivo");
+
+                    b.Navigation("ResponsableNivel1");
+
+                    b.Navigation("ResponsableNivel2");
+
+                    b.Navigation("Solicitante");
+
+                    b.Navigation("SubMotivo");
+
+                    b.Navigation("Territorio");
+
+                    b.Navigation("TipoFicha");
+
+                    b.Navigation("TipoIncidencia");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.LogAccionesIncidencia", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Archivos", "Archivos")
+                        .WithMany("LogAccionesIncidencias")
+                        .HasForeignKey("IdArchivo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Incidencias", "Incidencias")
+                        .WithMany("LogAccionesIncidencia")
+                        .HasForeignKey("IdIncidencia")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Archivos");
+
+                    b.Navigation("Incidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Matriz", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AccionesRequisitoFicha", "AccionesRequisitoFicha")
+                        .WithMany("Matrizs")
+                        .HasForeignKey("IdAccionesRequisitoFicha")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasReclamos", "AreasReclamos")
+                        .WithMany()
+                        .HasForeignKey("IdAreaReclamos")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Casos", "Casos")
+                        .WithMany()
+                        .HasForeignKey("IdCasos")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Motivo", "Motivos")
+                        .WithMany("Matrizs")
+                        .HasForeignKey("IdMotivos")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.RequisitosTipoFicha", "RequisitosTipoFicha")
+                        .WithMany("Matrizs")
+                        .HasForeignKey("IdRequisitoFicha")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", "ResponsableReclamo1")
+                        .WithMany("MatrizIdResponsableReclamos1")
+                        .HasForeignKey("IdResponsableReclamo1");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", "ResponsableReclamo2")
+                        .WithMany("MatrizIdResponsableReclamos2")
+                        .HasForeignKey("IdResponsableReclamo2");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SubMotivo", "SubMotivo")
+                        .WithMany("Matrizs")
+                        .HasForeignKey("IdSubMotivo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoFicha", "TipoFicha")
+                        .WithMany()
+                        .HasForeignKey("IdTipoFicha");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoReconocimiento", "TipoReconocimiento")
+                        .WithMany("Matrizs")
+                        .HasForeignKey("IdTipoReconocimiento")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccionesRequisitoFicha");
+
+                    b.Navigation("AreasReclamos");
+
+                    b.Navigation("Casos");
+
+                    b.Navigation("Motivos");
+
+                    b.Navigation("RequisitosTipoFicha");
+
+                    b.Navigation("ResponsableReclamo1");
+
+                    b.Navigation("ResponsableReclamo2");
+
+                    b.Navigation("SubMotivo");
+
+                    b.Navigation("TipoFicha");
+
+                    b.Navigation("TipoReconocimiento");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Motivo", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Casos", "Casos")
+                        .WithMany()
+                        .HasForeignKey("IdCaso");
+
+                    b.Navigation("Casos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Paises", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Continente", "Continente")
+                        .WithMany("Paises")
+                        .HasForeignKey("IdContinente")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Idiomas", "Idiomas")
+                        .WithMany("Paises")
+                        .HasForeignKey("IdIdioma")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Continente");
+
+                    b.Navigation("Idiomas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Permiso", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SeguridadArea", "SeguridadArea")
+                        .WithMany("Permisos")
+                        .HasForeignKey("IdArea")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SeguridadArea");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.PermisosRuta", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Rutas", "Rutas")
+                        .WithMany("PermisoRutas")
+                        .HasForeignKey("IdApplicationRoute")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Rutas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Preguntas", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GrupoDePreguntas", "GrupoDePreguntas")
+                        .WithMany("Preguntas")
+                        .HasForeignKey("IdGrupoDePreguntas");
+
+                    b.Navigation("GrupoDePreguntas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Productos", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Categorias", "Categorias")
+                        .WithMany("Productos")
+                        .HasForeignKey("IdCategoria")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Categorias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ProductosIncidencias", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Incidencias", "Incidencias")
+                        .WithMany("ProductosIncidencias")
+                        .HasForeignKey("IdIncidencias")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Producto", "Producto")
+                        .WithMany("ProductosIncidencias")
+                        .HasForeignKey("IdProducto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("Producto");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Regiones", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Paises", "Paises")
+                        .WithMany("Regiones")
+                        .HasForeignKey("IdPais")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Paises");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.RequisitosTipoFicha", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoFicha", "TipoFicha")
+                        .WithMany()
+                        .HasForeignKey("IdTipoFicha")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TipoFicha");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasReclamos", "AreasReclamos")
+                        .WithMany()
+                        .HasForeignKey("IdAreaReclamo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Territorio", "Territorio")
+                        .WithMany("ResponsableReclamos")
+                        .HasForeignKey("IdTerritorio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AreasReclamos");
+
+                    b.Navigation("Territorio");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.RespuestaEncuestaIncidencia", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaIncidencia", "EncuestaIncidencia")
+                        .WithMany("RespuestaEncuestaIncidencias")
+                        .HasForeignKey("IdEncuesta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.PreguntaCatalogo", "PreguntaCatalogo")
+                        .WithMany("RespuestaEncuestaIncidencias")
+                        .HasForeignKey("IdPregunta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EncuestaIncidencia");
+
+                    b.Navigation("PreguntaCatalogo");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Respuestas", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaIncidencia", null)
+                        .WithMany("Respuestas")
+                        .HasForeignKey("EncuestaIncidenciaIdEncuesta");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaDetalle", "EncuestaDetalle")
+                        .WithMany("Respuestas")
+                        .HasForeignKey("IdEncuesta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Preguntas", "Preguntas")
+                        .WithMany("Respuestas")
+                        .HasForeignKey("IdPregunta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EncuestaDetalle");
+
+                    b.Navigation("Preguntas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SeguridadArea", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SeguridadNivele", "SeguridadNivele")
+                        .WithMany("SeguridadArea")
+                        .HasForeignKey("SeguridadNiveleIdNivel");
+
+                    b.Navigation("SeguridadNivele");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.State", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Job", "Job")
+                        .WithMany()
+                        .HasForeignKey("JoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SubMotivo", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Motivo", "Motivo")
+                        .WithMany("SubMotivos")
+                        .HasForeignKey("IdMotivoss")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.RequisitosTipoFicha", "RequisitosTipoFicha")
+                        .WithMany("SubMotivos")
+                        .HasForeignKey("IdRequisitoTipoFicha")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoReconocimiento", "TipoReconocimiento")
+                        .WithMany("SubMotivos")
+                        .HasForeignKey("IdTipoReconocimiento")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Motivo");
+
+                    b.Navigation("RequisitosTipoFicha");
+
+                    b.Navigation("TipoReconocimiento");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TemporalIncidencias", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AreasReclamos", "AreasReclamos")
+                        .WithMany()
+                        .HasForeignKey("IdAreaReclamo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorComercial", "AsesorComercial")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdAsesorComercial")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorTecnico", "AsesorTecnico")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdAsesorTecnico");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Casos", "Casos")
+                        .WithMany()
+                        .HasForeignKey("IdCaso")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EstadosIncidencias", "EstadosIncidencias")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdEstadoIncidencias")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EstadoProcesoFicha", "EstadoProcesoFicha")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdEstadoProcesoFicha")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GestorReclamo", "GestorReclamo")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdGestorReclamo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Motivo", "Motivo")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdMotivo");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", "ResponsableNivel1")
+                        .WithMany("TemporalIncidenciasIdResponsableNivel1")
+                        .HasForeignKey("IdResponsableNivel1");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", "ResponsableNivel2")
+                        .WithMany("TemporalIncidenciasIdResponsableNivel2")
+                        .HasForeignKey("IdResponsableNivel2");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Solicitante", "Solicitante")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdSolicitante")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SubMotivo", "SubMotivo")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdSubMotivo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Territorio", "Territorio")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdTerritorio");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoFicha", "TipoFicha")
+                        .WithMany()
+                        .HasForeignKey("IdTipoFicha");
+
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoIncidencia", "TipoIncidencia")
+                        .WithMany("TemporalIncidencias")
+                        .HasForeignKey("IdTipoIncidencias")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AreasReclamos");
+
+                    b.Navigation("AsesorComercial");
+
+                    b.Navigation("AsesorTecnico");
+
+                    b.Navigation("Casos");
+
+                    b.Navigation("EstadoProcesoFicha");
+
+                    b.Navigation("EstadosIncidencias");
+
+                    b.Navigation("GestorReclamo");
+
+                    b.Navigation("Motivo");
+
+                    b.Navigation("ResponsableNivel1");
+
+                    b.Navigation("ResponsableNivel2");
+
+                    b.Navigation("Solicitante");
+
+                    b.Navigation("SubMotivo");
+
+                    b.Navigation("Territorio");
+
+                    b.Navigation("TipoFicha");
+
+                    b.Navigation("TipoIncidencia");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoFicha", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Casos", "Casos")
+                        .WithMany()
+                        .HasForeignKey("IdCaso");
+
+                    b.Navigation("Casos");
+                });
+
             modelBuilder.Entity("PuntoDeVentaData.Entities.Parameters.Parameters", b =>
                 {
                     b.HasOne("PuntoDeVentaData.Entities.Parameters.ParameterType", "TypeParameter")
@@ -1543,6 +7574,13 @@ namespace Data.Migrations
                         .HasForeignKey("TypeParameterIdTypeParameter");
 
                     b.Navigation("TypeParameter");
+                });
+
+            modelBuilder.Entity("PuntoDeVentaData.Entities.Security.ApplicationUser", b =>
+                {
+                    b.HasOne("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Ciudades", null)
+                        .WithMany("Users")
+                        .HasForeignKey("CiudadesIdCiudad");
                 });
 
             modelBuilder.Entity("PuntoDeVentaData.Entities.Security.Menu", b =>
@@ -1576,6 +7614,267 @@ namespace Data.Migrations
                         .HasForeignKey("userOrigenId");
 
                     b.Navigation("userOrigen");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AccionesRequisitoFicha", b =>
+                {
+                    b.Navigation("Matrizs");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Archivos", b =>
+                {
+                    b.Navigation("LogAccionesIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ArchivosCarga", b =>
+                {
+                    b.Navigation("ArchivosCargaIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorComercial", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.AsesorTecnico", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.CategoriaCamaron", b =>
+                {
+                    b.Navigation("CategoriaSeleccionadas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Categorias", b =>
+                {
+                    b.Navigation("Productos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Ciudades", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Cliente", b =>
+                {
+                    b.Navigation("Factura");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Continente", b =>
+                {
+                    b.Navigation("Paises");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Encuesta", b =>
+                {
+                    b.Navigation("EncuestaDetalles");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaDetalle", b =>
+                {
+                    b.Navigation("GrupoDePreguntas");
+
+                    b.Navigation("Respuestas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EncuestaIncidencia", b =>
+                {
+                    b.Navigation("RespuestaEncuestaIncidencias");
+
+                    b.Navigation("Respuestas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EstadoProcesoFicha", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Estados", b =>
+                {
+                    b.Navigation("Ciudades");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.EstadosIncidencias", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Factura", b =>
+                {
+                    b.Navigation("FacturaDetalle");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GestorReclamo", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.GrupoDePreguntas", b =>
+                {
+                    b.Navigation("Preguntas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Idiomas", b =>
+                {
+                    b.Navigation("Paises");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Incidencias", b =>
+                {
+                    b.Navigation("LogAccionesIncidencia");
+
+                    b.Navigation("ProductosIncidencias");
+
+                    b.Navigation("archivosCargaIncidencias");
+
+                    b.Navigation("categoriaSeleccionadas");
+
+                    b.Navigation("encuestaIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Motivo", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("Matrizs");
+
+                    b.Navigation("SubMotivos");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Paises", b =>
+                {
+                    b.Navigation("Estados");
+
+                    b.Navigation("Regiones");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.PreguntaCatalogo", b =>
+                {
+                    b.Navigation("RespuestaEncuestaIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Preguntas", b =>
+                {
+                    b.Navigation("Respuestas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Producto", b =>
+                {
+                    b.Navigation("ProductosIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Productos", b =>
+                {
+                    b.Navigation("FacturaDetalles");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.PuntoVenta", b =>
+                {
+                    b.Navigation("Factura");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Regiones", b =>
+                {
+                    b.Navigation("Estados");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.RequisitosTipoFicha", b =>
+                {
+                    b.Navigation("AccionesRequisitoFicha");
+
+                    b.Navigation("Matrizs");
+
+                    b.Navigation("SubMotivos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.ResponsableReclamo", b =>
+                {
+                    b.Navigation("AreasResponsables");
+
+                    b.Navigation("IncidenciaIdResponsableNivel1");
+
+                    b.Navigation("IncidenciaIdResponsableNivel2");
+
+                    b.Navigation("MatrizIdResponsableReclamos1");
+
+                    b.Navigation("MatrizIdResponsableReclamos2");
+
+                    b.Navigation("TemporalIncidenciasIdResponsableNivel1");
+
+                    b.Navigation("TemporalIncidenciasIdResponsableNivel2");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Rutas", b =>
+                {
+                    b.Navigation("PermisoRutas");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SeguridadArea", b =>
+                {
+                    b.Navigation("Permisos");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SeguridadNivele", b =>
+                {
+                    b.Navigation("SeguridadArea");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Solicitante", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.SubMotivo", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("Matrizs");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.Territorio", b =>
+                {
+                    b.Navigation("AsesorComercial");
+
+                    b.Navigation("AsesorTecnicos");
+
+                    b.Navigation("GestorReclamos");
+
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("ResponsableReclamos");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoIncidencia", b =>
+                {
+                    b.Navigation("Incidencias");
+
+                    b.Navigation("TemporalIncidencias");
+                });
+
+            modelBuilder.Entity("NicoAssistRemake.Data.Entities.Vitaprohelpdesk.TipoReconocimiento", b =>
+                {
+                    b.Navigation("Matrizs");
+
+                    b.Navigation("SubMotivos");
                 });
 
             modelBuilder.Entity("PuntoDeVentaData.Entities.Parameters.ParameterType", b =>

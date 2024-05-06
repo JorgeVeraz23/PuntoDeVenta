@@ -1,4 +1,5 @@
-﻿using PuntoDeVentaData.Entities.Enumerators;
+﻿using Data.Entities.Utilities;
+using PuntoDeVentaData.Entities.Enumerators;
 using PuntoDeVentaData.Entities.Utilities;
 using System;
 using System.Collections.Generic;

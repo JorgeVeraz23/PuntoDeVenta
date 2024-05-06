@@ -1,0 +1,21 @@
+﻿using NicoAssistRemake.Data.Dto.VitaprohelpdeskDto;
+using NicoAssistRemake.Data.Entities.Utilities;
+using PuntoDeVentaData.Dto.UtilitiesDTO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NicoAssistRemake.Data.Interfaces.VitaprohelpdesdkInterface
+{
+    public interface GestorReclamoInterface
+    {
+        public Task<List<MostrarGestorReclamoDto>> GetAll();
+        public Task<List<KeyValue>> KeyValues();
+        public Task<GestorReclamoDto> Get(long Id);
+        public Task<MessageInfoDTO> Desactive(long Id);
+        public Task<MessageInfoDTO> Create(GestorReclamoDto data);
+        public Task<MessageInfoDTO> Edit(GestorReclamoDto data);
+    }
+}

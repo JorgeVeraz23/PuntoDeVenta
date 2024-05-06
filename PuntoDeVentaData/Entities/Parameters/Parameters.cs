@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Data.Entities.Utilities;
+using Microsoft.EntityFrameworkCore;
 using PuntoDeVentaData.Entities.Enumerators;
 using PuntoDeVentaData.Entities.Utilities;
 using System;

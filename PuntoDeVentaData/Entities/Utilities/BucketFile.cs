@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Data.Entities.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PuntoDeVentaData.Entities.Utilities
+namespace NicoAssistRemake.Data.Entities.Utilities
 {
     public class BucketFile : CrudEntities
     {

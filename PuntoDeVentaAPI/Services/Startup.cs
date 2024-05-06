@@ -23,6 +23,7 @@ using PuntoDeVentaAPI.Services;
 using PuntoDeVentaData.Entities.Security;
 using Data;
 using PuntoDeVentaAPI.Filters;
+using NicoAssistRemake.Data;
 
 namespace PuntoDeVentaAPI.Services
 {
